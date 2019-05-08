@@ -1,5 +1,3 @@
-# import the necessary packages
-
 from picamera.array import PiRGBArray
 from picamera import PiCamera
 import time
@@ -7,7 +5,6 @@ import cv2
 
 def detect(img, cascade):
     rects = cascade.detectMultiScale(img, scaleFactor=1.3, minNeighbors=4, minSize=(30, 30),
-
                                      flags=cv2.CASCADE_SCALE_IMAGE)
     if len(rects) == 0:
         return []
@@ -18,7 +15,6 @@ def detect(img, cascade):
 def draw_rects(img, rects, color):
     for x1, y1, x2, y2 in rects:
         cv2.rectangle(img, (x1, y1), (x2, y2), color, 2)
-
 
 
 # initialize the camera and grab a reference to the raw camera capture
@@ -44,14 +40,12 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     vis = img.copy()
     draw_rects(vis, rects, (0, 255, 0))
 
-    # show the frame
+    # 프레임 출력
     cv2.imshow("Frame", vis)
     key = cv2.waitKey(1) & 0xFF
 
-
     # clear the stream in preparation for the next frame
     rawCapture.truncate(0)
-
 
     # if the `q` key was pressed, break from the loop
     if key == ord("q"):
