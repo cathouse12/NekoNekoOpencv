@@ -75,3 +75,27 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     if key == ord("q"):
 
         break
+	
+	if faces.size() > 0:
+		
+	ser = serial.Serial('COM1', 9600)
+	print(ser)
+	ser.write('1')
+		
+		#detectStatus = '1'
+		#if (temp == '0') {
+			#print('detect!')
+			#serialComm.sendCommand('1')
+			#temp = '1'
+
+else:
+	
+ser = serial.Serial('COM1', 9600)
+print(ser)
+ser.write('1')
+		#detectStatus = '0'
+		#if (temp == '1') 
+			#print('unknown')
+			#serialComm.sendCommand('0')
+			#temp = '0'
+	
