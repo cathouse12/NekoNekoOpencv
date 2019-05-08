@@ -87,12 +87,13 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
 			#print('detect!')
 			#serialComm.sendCommand('1')
 			#temp = '1'
-
-else:
+			
+	else:
 	
-ser = serial.Serial('COM1', 9600)
-print(ser)
-ser.write('1')
+	ser = serial.Serial('COM', 9600)
+	print(ser)
+	ser.write('1')
+	
 		#detectStatus = '0'
 		#if (temp == '1') 
 			#print('unknown')
