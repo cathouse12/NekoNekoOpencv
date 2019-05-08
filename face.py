@@ -13,29 +13,6 @@ def detect(img, cascade):
     return rects
     
 
-    if faces.size() > 0:
-	ser = serial.Serial('COM1', 9600)
-	print(ser)
-	ser.write('1')
-		
-		#detectStatus = '1'
-		#if (temp == '0') {
-			#print('detect!')
-			#serialComm.sendCommand('1')
-			#temp = '1'
-	
-     else:
-        ser = serial.Serial('COM1', 9600)
-	print(ser)
-        ser.write('1')
-		#detectStatus = '0'
-		#if (temp == '1') 
-			#print('unknown')
-			#serialComm.sendCommand('0')
-			#temp = '0'
-	
-			
-
 def draw_rects(img, rects, color):
     for x1, y1, x2, y2 in rects:
         cv2.rectangle(img, (x1, y1), (x2, y2), color, 2)
