@@ -11,7 +11,22 @@ def detect(img, cascade):
         return []
     rects[:,2:] += rects[:,:2]
     return rects
+    
 
+    if faces.size() > 0:
+		detectStatus = '1'
+		if (temp == '0') {
+			print('detect!')
+			serialComm.sendCommand('1')
+			temp = '1'
+	
+	else:
+		detectStatus = '0'
+		if (temp == '1') 
+			print('unknown')
+			serialComm.sendCommand('0')
+			temp = '0'
+	
 
 def draw_rects(img, rects, color):
     for x1, y1, x2, y2 in rects:
